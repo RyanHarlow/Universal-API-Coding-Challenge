@@ -1,7 +1,6 @@
 const { Sequelize } = require("sequelize");
 
 
-// Option 3: Passing parameters separately (other dialects)
 const sequelize = new Sequelize('spotify', undefined, undefined, {
     host: '/var/run/postgresql',
     dialect: 'postgres'
@@ -16,4 +15,4 @@ try {
   }
 }
 
-testDB();
+module.exports = { sq: sequelize, testDB };
