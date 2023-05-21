@@ -5,10 +5,13 @@ const PORT = process.env.PORT || 3000;
 const getTrackByISRC = require("./spotify/getTrackByISRC");
 const Track = require("./models/track");
 const {initModels} = require('./config/initModels');
+const { Op, QueryTypes} = require("sequelize");
+const { sq } = require("./config/db");
+
 
 initModels();
 
-app.post("/api/track/:isrc", async (req, res) => {
+app.post("/api/tracks/:isrc", async (req, res) => {
   let track = await getTrackByISRC(req.params.isrc);
   console.log(track.album.images)
 
@@ -23,13 +26,41 @@ app.post("/api/track/:isrc", async (req, res) => {
 
 });
 
+app.get("/api/tracks/:isrc", async (req,res) => {
+  const isrc = req.params.isrc;
+
+  const track = await Track.findOne({ where: { isrc } });
+  if (track === null) {
+    res.status(404).send({});
+  } else {
+    res.status(200).send({...track.dataValues});
+  }
+
+
+})
+
+app.get("/api/tracks", async (req,res) => {
+  res.send(`getting tracks by artist ${req.query.artist}`)
+
+  let track = await sq.query(
+    "select * from tracks where exists (select from unnest(artist_list) elem where elem ilike ?)",
+    {
+      replacements: [`%${req.query.artist}%`],
+      type: QueryTypes.SELECT
+    }
+  );
+
+console.log(track)
+
+
+})
 
 
 app.listen(PORT, () => {
   console.log(`app listening on port ${PORT}`);
 });
 
-fetch("http://localhost:3000/api/track/USHR11233750", {
+fetch("http://localhost:3000/api/tracks/USHR11233750", {
   method: "POST",
 });
 
