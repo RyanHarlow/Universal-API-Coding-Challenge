@@ -11,22 +11,26 @@ npm 8.18.0
 postgres 14.7
 
 
-### postgres installation and config
-sudo apt install postgresql postgresql-contrib
+### Postgres installation and config
+In order to run the app, we need to have postgres installed and running locally with a postgres user with the same username as our local linux user, and we need to have an empty database named "spotify"
 
-sudo systemctl start postgresql.service
+1. `sudo apt install postgresql postgresql-contrib`
 
-sudo -u postgres createuser --interactive
+2. `sudo systemctl start postgresql.service`
 
-Enter name of role to add: linux username
+3. `sudo -u postgres createuser --interactive`
 
-Shall the new role be a superuser? (y/n) y
+4. Enter name of role to add: linuxUserName
 
-createdb sammy
+5. Shall the new role be a superuser? (y/n) y
 
-psql
+6. `createdb linuxusername`
 
-CREATE DATABASE spotify;
+7. `psql`
+
+8. `CREATE DATABASE spotify;`
+
+9. `\q`
 
 ###  Installation
 
