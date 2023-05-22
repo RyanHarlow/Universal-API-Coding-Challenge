@@ -3,6 +3,9 @@
 ## API Documentation
 API documentation can be found [here](https://app.swaggerhub.com/apis-docs/RYANHARLOW95_1/Universal-API-Coding-Challenge/1.0).
 
+## Live Demo
+API Live Demo is available at https://universal.ryanharlow.com/api/tracks/
+
 ## Usage Demo
 [Demo](https://drive.google.com/file/d/1CWr6Mkhjzl6NK3aRe0VkcYcNl2yMjqIf/view?usp=share_link)
 
