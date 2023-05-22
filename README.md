@@ -6,6 +6,11 @@ API documentation can be found [here](https://app.swaggerhub.com/apis-docs/RYANH
 ## Live Demo
 API Live Demo is available at https://universal.ryanharlow.com/api/tracks/
 
+### End point examples
+Create track by isrc: POST https://universal.ryanharlow.com/api/tracks/USGF19942501
+Retrieve track by isrc: GET https://universal.ryanharlow.com/api/tracks/USGF19942501
+Search track by artist: GET https://universal.ryanharlow.com/api/tracks/?artist=nirvana
+
 ## Usage Demo
 [Demo](https://drive.google.com/file/d/1CWr6Mkhjzl6NK3aRe0VkcYcNl2yMjqIf/view?usp=share_link)
 
