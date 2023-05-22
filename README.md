@@ -3,12 +3,17 @@
 ## API Documentation
 API documentation can be found [here](https://app.swaggerhub.com/apis-docs/RYANHARLOW95_1/Universal-API-Coding-Challenge/1.0).
 
+## Usage Demo
+[Demo](https://drive.google.com/file/d/1CWr6Mkhjzl6NK3aRe0VkcYcNl2yMjqIf/view?usp=share_link)
+
 ## Installation
 
-prerequisites
-node v18.7.0
-npm 8.18.0
-postgres 14.7
+### Prerequisites
+* node v18.7.0
+
+* npm 8.18.0
+
+* postgres 14.7
 
 
 ### Postgres installation and config
